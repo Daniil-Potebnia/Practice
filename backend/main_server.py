@@ -1,3 +1,4 @@
+from waitress import serve
 from flask import Flask, render_template, redirect
 from flask_login import LoginManager, current_user
 from flask_socketio import SocketIO
@@ -5,7 +6,7 @@ from flask_socketio import SocketIO
 from orm.db_session import global_init, create_session
 from orm.user import User
 
-app = Flask(__name__, template_folder='../frontend/templates')
+app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
 app.config['SECRET_KEY'] = 'dahre-project'
 
 login_manager = LoginManager()
@@ -33,13 +34,7 @@ def main_page():
     return render_template('main_page.html', title='Начало')
 
 
-@app.route('/u')
-def a():
-    with create_session() as session:
-        print(session.query(User).all())
-    return ''
-
-
 if __name__ == '__main__':
     global_init()
-    socketio.run(app=app, host='127.0.0.1', port=8080, allow_unsafe_werkzeug=True)
+    socketio.run(app=app, host='127.0.0.1', port=8080, allow_unsafe_werkzeug=True, debug=True)
+    # serve(app, host='127.0.0.1', port=8080)

@@ -1,0 +1,72 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vh;
+}
+
+div {
+    display: block;
+}
+
+a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-container {
+    position: sticky; 
+    top: 0;
+}
+
+.header {
+    width: 100%; 
+    position: relative;
+}
+
+.header-content {
+    align-items: baseline; 
+    display: flex; 
+    height: 10vh; 
+    justify-content: flex-start;
+}
+
+.img-container {
+    position: relative;
+    top: 0;
+    width: 10vh;
+    height: 10vh;
+    box-sizing: content-box;
+    margin: 0px;
+}
+
+.logo {
+    resize: both;
+    width: 10vh;
+    padding: 7%;
+}
+
+.nav-container {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.nav {
+    flex-direction: row-reverse;
+    vertical-align: middle;
+}
+
+.mybtn {
+    position: relative;
+    height: 3vh;
+}
+
+.links {
+    gap: 3rem; 
+    font-size: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.reg-log {
+    gap: 0rem;
+    font-size: 1.25rem;
+    display: inline-flex;
+}
