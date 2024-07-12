@@ -11,7 +11,7 @@ __factory = None
 def global_init():
     global __factory
 
-    engine = create_engine(settings.db_url_psycopg, echo=False)
+    engine = create_engine(settings.db_url_psycopg, echo=True)
     __factory = sessionmaker(bind=engine)
 
     from . import __all_models
